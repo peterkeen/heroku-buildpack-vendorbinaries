@@ -1,0 +1,21 @@
+#!/bin/bash
+
+
+indent() {
+  sed -u 's/^/       /'
+}
+
+echo "-----> Found a .vendor_urls file"
+
+# Bail early but noisily
+if [ ! -s $1/.vendor_urls ]; then
+  echo ".vendor_urls empty. Skipping." | indent
+  exit 0
+fi
+
+cd $1
+
+while read url; do
+  echo Vendoring $url | indent
+  curl $url | tar xf
+done < .vendor_urls
