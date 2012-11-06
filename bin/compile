@@ -17,5 +17,5 @@ cd $1
 
 while read url; do
   echo Vendoring $url | indent
-  curl --silent $url | tar x
+  curl --silent $url | tar xz
 done < .vendor_urls
