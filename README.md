@@ -20,5 +20,5 @@ Usage
            Vendoring https://s3.amazonaws.com/my-bucket/foo.tar.gz
     ...
 
-The buildpack will detect that your app has a `.vendor_urls` file in the root. Each line in this file will be treated as a URL pointing at a tarball to fetch and extract into your application's root directory.
+The buildpack will detect that your app has a `.vendor_urls` file in the root. Each line in this file will be treated as a URL pointing at a tarball to fetch and extract into your application's root directory. Note that `.vendor_urls` must end with a newline in order to correctly read all entries.
 
