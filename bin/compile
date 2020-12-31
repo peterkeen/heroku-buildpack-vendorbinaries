@@ -1,3 +1,4 @@
 #!/bin/bash
 
+cd $1
 ./Build_commands
